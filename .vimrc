@@ -149,4 +149,5 @@ let g:indent_guides_start_level = 2
 
 " Emmet config
 map <C-N> <C-Y>
+imap <C-N> <C-Y>
 " let g:user_emmet_leader_key='<C-N>'
