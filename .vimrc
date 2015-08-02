@@ -6,13 +6,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Sensible
-Bundle 'tpope/vim-sensible'
+Plugin 'tpope/vim-sensible'
 
 " CTRL-P
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 
 " NERD tree
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 
 " NERD tree GIT
 Plugin 'Xuyuanp/nerdtree-git-plugin'
@@ -20,11 +20,14 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 " Surround
 Plugin 'tpope/vim-surround'
 
+" Unimpaired
+Plugin 'tpope/vim-unimpaired'
+
 " Fugitive
 Plugin 'tpope/vim-fugitive'
 
 " Easily toggling comments
-Bundle 'tpope/vim-commentary'
+Plugin 'tpope/vim-commentary'
 
 " EasyMotion
 Plugin 'easymotion/vim-easymotion'
@@ -48,26 +51,29 @@ Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'tomasr/molokai'
 
 " JSON filetype detection and support
-Bundle 'leshill/vim-json'
+Plugin 'leshill/vim-json'
 
 " JavaScript indentation fix
-Bundle 'pangloss/vim-javascript'
+Plugin 'pangloss/vim-javascript'
 
 " HTML indentation fix
-Bundle 'indenthtml.vim'
+Plugin 'indenthtml.vim'
 
 " HTML 5
 Plugin 'othree/html5.vim'
 
 " Markdown
-Bundle 'tpope/vim-markdown'
+Plugin 'tpope/vim-markdown'
 
 " LessCSS
-Bundle 'groenewege/vim-less'
+Plugin 'groenewege/vim-less'
 
 " Coffee-script syntax
-Bundle 'kchmck/vim-coffee-script'
+Plugin 'kchmck/vim-coffee-script'
 
+
+" required
+call vundle#end()
 
 " Filetype auto-detection
 filetype plugin indent on
@@ -100,7 +106,7 @@ set showmatch " live match highlighting
 set hlsearch " highlight matches
 set gdefault " use the `g` flag by default.
 " treat expression in search as regex
-nnoremap / /\v 
+nnoremap / /\v
 vnoremap / /\v
 
 " Visual block
