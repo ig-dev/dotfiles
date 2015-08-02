@@ -47,6 +47,9 @@ Plugin 'bling/vim-airline'
 " Indent Guides
 Plugin 'nathanaelkane/vim-indent-guides'
 
+" Repeat
+Plugin 'tpope/vim-repeat'
+
 " Molokai theme
 Plugin 'tomasr/molokai'
 
@@ -78,8 +81,11 @@ call vundle#end()
 " Filetype auto-detection
 filetype plugin indent on
 
-" Syntax highlighting
+" Style
 syntax on
+colorscheme molokai
+set guifont=DejaVu\ Sans\ Mono\ 12,\ Inconsolata:h12:cDEFAULT
+
 
 " Tabs
 set tabstop=4
@@ -93,10 +99,12 @@ set smartindent " Intellegently dedent / indent new lines based on rules.
 
 
 " File saving
-set nobackup " We have vcs, we don't need backups.
-set nowritebackup " We have vcs, we don't need backups.
-set noswapfile " They're just annoying. Who likes them?
+set nobackup " we don't need backups.
+set nowritebackup
+set noswapfile
 
+" Buffers
+set hidden " allow buffers with unsaved changes
 
 " Search
 set ignorecase
@@ -122,5 +130,11 @@ vnoremap ; :
 " NERD tree config
 map <C-o> :NERDTreeToggle<CR>
 
-
+" Moving content
+nmap <Leader>k [e
+nmap <Leader>j ]e
+nmap <Leader>h <<
+nmap <Leader>l >>
+vmap <Leader>h <`[V`]
+vmap <Leader>l >`[V`]
 
