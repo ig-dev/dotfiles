@@ -83,8 +83,10 @@ filetype plugin indent on
 
 " Style
 syntax on
-colorscheme molokai
 set guifont=DejaVu\ Sans\ Mono\ 12,\ Inconsolata:h12:cDEFAULT
+set t_Co=256
+let g:molokai_original=0
+colorscheme molokai
 
 
 " Tabs
@@ -120,6 +122,8 @@ vnoremap / /\v
 " Visual block
 set virtualedit+=block " allow the cursor to go anywhere
 
+" Mouse
+:set mouse=c " no mouse
 
 " Keys
 let mapleader = ","
@@ -127,14 +131,21 @@ let mapleader = ","
 nnoremap ; :
 vnoremap ; :
 
-" NERD tree config
-map <C-o> :NERDTreeToggle<CR>
-
 " Moving content
 nmap <Leader>k [e
 nmap <Leader>j ]e
+vmap <Leader>k [e
+vmap <Leader>j ]e
 nmap <Leader>h <<
 nmap <Leader>l >>
 vmap <Leader>h <`[V`]
 vmap <Leader>l >`[V`]
 
+" NERD Tree config
+map <C-o> :NERDTreeToggle<CR>
+
+" Indent Guides config
+let g:indent_guides_start_level = 2
+
+" Emmet config
+let g:user_emmet_leader_key='<C-N>'
