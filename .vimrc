@@ -148,4 +148,5 @@ map <C-o> :NERDTreeToggle<CR>
 let g:indent_guides_start_level = 2
 
 " Emmet config
-let g:user_emmet_leader_key='<C-N>'
+map <C-N> <C-Y>
+" let g:user_emmet_leader_key='<C-N>'
