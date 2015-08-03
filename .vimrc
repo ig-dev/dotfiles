@@ -83,7 +83,7 @@ filetype plugin indent on
 
 " Style
 syntax on
-set guifont=DejaVu\ Sans\ Mono\ 12,\ Inconsolata:h12:cDEFAULT
+set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12,\ Inconsolata:h12:cDEFAULT
 set t_Co=256
 let g:molokai_original=0
 colorscheme molokai
@@ -178,5 +178,9 @@ nnoremap <Leader>P "+P
 nnoremap <Leader>yy "+yy
 nnoremap <Leader>Y "+Y
 vnoremap <Leader>y "+y
+
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 
