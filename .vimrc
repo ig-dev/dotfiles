@@ -172,6 +172,11 @@ let g:ctrlp_custom_ignore = {
 let g:ctrlp_working_path_mode = '0'
 
 
+" Airline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+
 " System clipboard
 nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
@@ -179,8 +184,10 @@ nnoremap <Leader>yy "+yy
 nnoremap <Leader>Y "+Y
 vnoremap <Leader>y "+y
 
-" Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
 
+" Tabbing (buffering)
+noremap <C-H> :bp<CR>
+noremap <C-L> :bn<CR>
 
+" Search highlighting
+nnoremap <silent> <C-U> :nohlsearch<CR><C-U>
