@@ -148,6 +148,35 @@ map <C-o> :NERDTreeToggle<CR>
 let g:indent_guides_start_level = 2
 
 " Emmet config
-map <C-N> <C-Y>
-imap <C-N> <C-Y>
-" let g:user_emmet_leader_key='<C-N>'
+let g:user_emmet_leader_key='<C-\>'
+map <C-N> <C-\>
+imap <C-N> <C-\>
+
+" YouCompleteMe config
+let g:ycm_filetype_blacklist = {
+    \ 'tagbar' : 1,
+    \ 'qf' : 1,
+    \ 'notes' : 1,
+    \ 'unite' : 1,
+    \ 'vimwiki' : 1,
+    \ 'pandoc' : 1,
+    \ 'infolog' : 1,
+    \ 'mail' : 1
+    \}
+
+
+" Ctrl-P config
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|tmp$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+let g:ctrlp_working_path_mode = '0'
+
+
+" System clipboard
+nnoremap <Leader>p "+p
+nnoremap <Leader>P "+P
+nnoremap <Leader>yy "+yy
+nnoremap <Leader>Y "+Y
+vnoremap <Leader>y "+y
+
+
