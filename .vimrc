@@ -50,6 +50,12 @@ Plugin 'nathanaelkane/vim-indent-guides'
 " Repeat
 Plugin 'tpope/vim-repeat'
 
+" Visual repeat
+Plugin 'vim-scripts/visualrepeat'
+
+" CamelCaseMotion
+Plugin 'bkad/CamelCaseMotion'
+
 " Molokai theme
 Plugin 'tomasr/molokai'
 
@@ -78,8 +84,14 @@ Plugin 'kchmck/vim-coffee-script'
 " required
 call vundle#end()
 
+
 " Filetype auto-detection
 filetype plugin indent on
+
+
+" File types
+au BufReadPost *.hbs set filetype=html
+
 
 " Style
 syntax on
@@ -87,6 +99,7 @@ set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12,\ Inconsolata:h12:cDEFAULT
 set t_Co=256
 let g:molokai_original=0
 colorscheme molokai
+set lines=999 columns=999
 
 
 " Tabs
@@ -105,8 +118,10 @@ set nobackup " we don't need backups.
 set nowritebackup
 set noswapfile
 
+
 " Buffers
 set hidden " allow buffers with unsaved changes
+
 
 " Search
 set ignorecase
@@ -119,11 +134,17 @@ set gdefault " use the `g` flag by default.
 nnoremap / /\v
 vnoremap / /\v
 
+
 " Visual block
 set virtualedit+=block " allow the cursor to go anywhere
 
+
 " Mouse
 :set mouse=c " no mouse
+
+
+" Scrolling
+set scrolloff=3
 
 " Keys
 let mapleader = ","
@@ -131,26 +152,14 @@ let mapleader = ","
 nnoremap ; :
 vnoremap ; :
 
-" Moving content
-nmap <Leader>k [e
-nmap <Leader>j ]e
-vmap <Leader>k [e
-vmap <Leader>j ]e
-nmap <Leader>h <<
-nmap <Leader>l >>
-vmap <Leader>h <`[V`]
-vmap <Leader>l >`[V`]
 
 " NERD Tree config
 map <C-o> :NERDTreeToggle<CR>
 
-" Indent Guides config
-let g:indent_guides_start_level = 2
 
 " Emmet config
-let g:user_emmet_leader_key='<C-\>'
-map <C-N> <C-\>
-imap <C-N> <C-\>
+let g:user_emmet_leader_key='<C-F>'
+
 
 " YouCompleteMe config
 let g:ycm_filetype_blacklist = {
@@ -178,7 +187,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 " modified tab color
 source ~/.vim/bundle/vim-airline/autoload/airline/themes/molokai.vim
-let g:airline#themes#molokai#palette.normal_modified = { 'airline_c': [ '#ffffff' , '#3b8391' , 231     , 52      , ''     ] , }
+let g:airline#themes#molokai#palette.normal_modified = { 'airline_c' :
+    \ [ '#ffffff' , '#4e52bc' , 23 , 52 , '' ] , }
 
 
 " System clipboard
@@ -204,6 +214,36 @@ nmap <leader>7 <Plug>AirlineSelectTab7
 nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 
-" Search highlighting
-nnoremap <silent> <C-U> :nohlsearch<CR><C-U>
 
+" Search highlighting
+nnoremap <silent> <Leader>n :nohlsearch<CR>
+nnoremap <silent> <CR> :nohlsearch<CR>
+
+
+" Moving content
+vnoremap <Plug>IndentBlock >:silent! call repeat#set("\<Plug>IndentBlock")<CR>`[V`]
+vnoremap <Plug>OutdentBlock <:silent! call repeat#set("\<Plug>OutdentBlock")<CR>`[V`]
+nmap <Leader>k [e
+nmap <Leader>j ]e
+vmap <Leader>k [e
+vmap <Leader>j ]e
+nmap <Leader>h <<
+nmap <Leader>l >>
+vmap <Leader>h <Plug>OutdentBlock
+vmap <Leader>l <Plug>IndentBlock
+
+
+" convert px to em in line
+noremap <leader>em
+	\ :s/^.\{-}\(\d\+\)px.*$/& \/\* (\1:16) \*\//g <CR>
+	\ :s#\v(\d+)px#\=printf("%sem", string(1.0/16*submatch(1)))#<CR>
+	\ :s/ \*\/ \/\* / /g<CR>
+
+
+" Center search results
+:nnoremap n nzz
+:nnoremap N Nzz
+:nnoremap * *zz
+:nnoremap # #zz
+:nnoremap g* g*zz
+:nnoremap g# g#zz
