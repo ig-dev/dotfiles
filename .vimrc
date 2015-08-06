@@ -59,6 +59,9 @@ Plugin 'bkad/CamelCaseMotion'
 " Easyoperator Line
 Plugin 'haya14busa/vim-easyoperator-line'
 
+" Smooth Scroll
+Plugin 'terryma/vim-smooth-scroll'
+
 " Molokai theme
 Plugin 'tomasr/molokai'
 
@@ -163,7 +166,7 @@ map <C-o> :NERDTreeToggle<CR>
 
 
 " Emmet config
-let g:user_emmet_leader_key='<C-F>'
+let g:user_emmet_leader_key='<C-Y>'
 
 
 " EasyMotion Config
@@ -257,6 +260,7 @@ let g:indent_guides_guide_size = 1
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#222222 ctermbg=234
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=#222222 ctermbg=234
 
+
 " Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -265,6 +269,13 @@ let g:airline#extensions#tabline#buffer_idx_mode = 1
 source ~/.vim/bundle/vim-airline/autoload/airline/themes/molokai.vim
 let g:airline#themes#molokai#palette.normal_modified = { 'airline_c' :
 	\ [ '#ffffff' , '#4e52bc' , 23 , 52 , '' ] , }
+
+
+" Smooth Scroll Configuration
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
 
 
 " System clipboard
@@ -348,7 +359,3 @@ nnoremap <silent> <Leader>t42
 	\ :set tabstop=2<CR>
 	\ :set shiftwidth=2<CR>
 
-
-" CONFIGURATION BEING TRIED
-set relativenumber
-nnoremap <Leader>r :set relativenumber!<CR>
