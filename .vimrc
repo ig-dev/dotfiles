@@ -190,8 +190,8 @@ let g:EasyMotion_prompt = '{n}> '
 let g:EasyMotion_cursor_highlight = 1
 
 " EasyMotion search
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
+map  / <Plug>(easymotion-sn)\v
+omap / <Plug>(easymotion-tn)\v
 map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
@@ -202,9 +202,11 @@ map ;f <Plug>(easymotion-s)
 map ;d <Plug>(easymotion-bd-W)
 map <Space> <Plug>(easymotion-lineanywhere)
 
-" Extend hjkl
-map ;j <Plug>(easymotion-j)
-map ;k <Plug>(easymotion-k)
+" Improve hjkl
+map gj <Plug>(easymotion-j)
+map gk <Plug>(easymotion-k)
+noremap j gj
+noremap k gk
 
 " Extened word motion
 map  ;w  <Plug>(easymotion-bd-wl)
