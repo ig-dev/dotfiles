@@ -200,9 +200,8 @@ map  N <Plug>(easymotion-prev)
 
 
 " EasyMotion Mapping EXPERIMENTAL
-map ;s <Plug>(easymotion-s2)
-map ;f <Plug>(easymotion-s)
-map ;d <Plug>(easymotion-bd-W)
+map s <Plug>(easymotion-s)
+map <CR> <Plug>(easymotion-s2)
 map <Space> <Plug>(easymotion-lineanywhere)
 
 " Improve hjkl
@@ -252,6 +251,7 @@ let g:ctrlp_custom_ignore = {
 	\ 'dir':	'\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|tmp$',
 	\ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 let g:ctrlp_working_path_mode = '0'
+let g:ctrlp_show_hidden = 1
 
 
 " IndentGuides config
@@ -287,6 +287,10 @@ nmap "" "+
 xmap "" "+
 
 
+" Selecting pasted content
+map gp `[v`]
+
+
 " Buffer management
 noremap <silent> <C-H> :bp<CR>
 noremap <silent> <C-L> :bn<CR>
@@ -303,9 +307,8 @@ nmap <leader>8 <Plug>AirlineSelectTab8
 nmap <leader>9 <Plug>AirlineSelectTab9
 
 
-
 " Search highlighting
-nnoremap <silent> <CR> :nohlsearch<CR>
+map <silent> <Leader>m :nohlsearch<CR>
 
 
 " Moving content
