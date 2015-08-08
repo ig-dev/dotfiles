@@ -192,7 +192,9 @@ let g:EasyMotion_prompt = '{n}> '
 " Highlight cursor
 let g:EasyMotion_cursor_highlight = 1
 
-" EasyMotion search
+" Seach /  EasyMotion search
+noremap <Leader>/ /\v
+onoremap <Leader>/ /\v
 map  / <Plug>(easymotion-sn)\v
 omap / <Plug>(easymotion-tn)\v
 map  n <Plug>(easymotion-next)
@@ -272,10 +274,10 @@ let g:airline#themes#molokai#palette.normal_modified = { 'airline_c' :
 
 
 " Smooth Scroll Configuration
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 10, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 10, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 10, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 10, 4)<CR>
+noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 15, 2)<CR>
+noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 15, 2)<CR>
+noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 25, 4)<CR>
+noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 25, 4)<CR>
 
 
 " System clipboard
@@ -308,7 +310,8 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 
 
 " Search highlighting
-map <silent> <Leader>m :nohlsearch<CR>
+map <silent> <C-N> :nohlsearch<CR>
+map <silent> <Esc><Esc> :nohlsearch<CR>
 
 
 " Moving content
