@@ -149,6 +149,8 @@ set virtualedit+=block " allow the cursor to go anywhere
 
 " Scrolling
 set scrolloff=3
+nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
+
 
 " Keys
 let mapleader = ","
@@ -365,3 +367,9 @@ nnoremap <silent> <Leader>t42
 	\ :set tabstop=2<CR>
 	\ :set shiftwidth=2<CR>
 
+
+" Split views
+map <A-j> <C-W>j
+map <A-k> <C-W>k
+map <A-h> <C-W>h
+map <A-l> <C-W>l
