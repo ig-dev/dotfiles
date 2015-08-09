@@ -171,7 +171,9 @@ autocmd FileType nerdtree nmap <buffer> J <Plug>(easymotion-j)
 autocmd FileType nerdtree nmap <buffer> K <Plug>(easymotion-k)
 autocmd FileType nerdtree nmap <buffer> L o
 autocmd FileType nerdtree nmap <buffer> H x
-
+autocmd FileType nerdtree nmap <buffer> <C-CR> go
+autocmd FileType nerdtree nmap <buffer> <S-CR> o:NERDTreeClose<CR>
+autocmd FileType nerdtree noremap <buffer> / /\v^\W*
 
 " Emmet config
 let g:user_emmet_leader_key='<C-Y>'
