@@ -158,13 +158,19 @@ let mapleader = ","
 " nnoremap ; :
 " vnoremap ; :
 
+
 " Easyoperator line keys
 map <Leader>v  <Plug>(easyoperator-line-select)
 nmap <Leader>d  <Plug>(easyoperator-line-delete)
 nmap <Leader>y  <Plug>(easyoperator-line-yank)
 
+
 " NERD Tree config
 map <C-o> :NERDTreeToggle<CR>
+autocmd FileType nerdtree nmap <buffer> J <Plug>(easymotion-j)
+autocmd FileType nerdtree nmap <buffer> K <Plug>(easymotion-k)
+autocmd FileType nerdtree nmap <buffer> L o
+autocmd FileType nerdtree nmap <buffer> H x
 
 
 " Emmet config
