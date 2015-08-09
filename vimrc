@@ -135,7 +135,7 @@ set ignorecase
 set smartcase " If there are uppercase letters, become case-sensitive.
 set incsearch " live incremental searching
 set showmatch " live match highlighting
-set hlsearch | nohlsearch "Highlight search patterns, support reloading
+set nohlsearch "Highlight search patterns, support reloading
 set gdefault " use the `g` flag by default.
 
 
@@ -195,7 +195,8 @@ let g:EasyMotion_prompt = '{n}> '
 let g:EasyMotion_cursor_highlight = 1
 
 " Seach /  EasyMotion search
-noremap <Leader>/ /\v
+" clear last search pattern highlight, and enable search result hightlighting
+noremap <Leader>/ :let @/ = ""<CR>:set hlsearch<CR>/\v
 onoremap <Leader>/ /\v
 map  / <Plug>(easymotion-sn)\v
 omap / <Plug>(easymotion-tn)\v
@@ -312,7 +313,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 
 
 " Search highlighting
-map <silent> <C-N> :nohlsearch<CR>
+map <silent> <C-N> :set hls!<CR>
 map <silent> <Esc><Esc> :nohlsearch<CR>
 
 
@@ -337,8 +338,8 @@ noremap <leader>em
 
 
 " Center search results
-:nnoremap n nzz
-:nnoremap N Nzz
+:nnoremap n nzz:set hlsearch<CR>
+:nnoremap N Nzz:set hlsearch<CR>
 :nnoremap * *zz
 :nnoremap # #zz
 :nnoremap g* g*zz
@@ -373,3 +374,5 @@ map <A-j> <C-W>j
 map <A-k> <C-W>k
 map <A-h> <C-W>h
 map <A-l> <C-W>l
+set splitbelow
+set splitright
