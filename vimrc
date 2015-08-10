@@ -175,15 +175,18 @@ autocmd FileType nerdtree nmap <buffer> <C-CR> go
 autocmd FileType nerdtree nmap <buffer> <S-CR> o:NERDTreeClose<CR>
 autocmd FileType nerdtree noremap <buffer> / /\v^\W*
 
+
 " Emmet config
 let g:user_emmet_leader_key='<C-Y>'
+nmap <C-Y>y <C-Y>,
+imap <C-Y>y <C-Y>,
 
 
 " EasyMotion Config
 let g:EasyMotion_do_mapping = 0
-" let g:EasyMotion_keys = ';HKLYUIOPNM,QWERTZXCVBASDGJF'
+let g:EasyMotion_keys = 'ASDFJKLQWERUIOPZXCNMGHVBTY;'
 " Do not shade
-let g:EasyMotion_do_shade = 0
+let g:EasyMotion_do_shade = 1
 " Use upper case
 let g:EasyMotion_use_upper = 1
 " Smartcase
@@ -198,7 +201,7 @@ let g:EasyMotion_skipfoldedline = 0
 " let g:EasyMotion_enter_jump_first = 1
 let g:EasyMotion_space_jump_first = 1
 " Prompt
-let g:EasyMotion_prompt = '{n}> '
+let g:EasyMotion_prompt = '{n}: '
 " Highlight cursor
 let g:EasyMotion_cursor_highlight = 1
 
@@ -212,14 +215,21 @@ map  n <Plug>(easymotion-next)
 map  N <Plug>(easymotion-prev)
 
 
-" EasyMotion Mapping EXPERIMENTAL
+" EasyMotion Mapping
 map s <Plug>(easymotion-s)
 map <CR> <Plug>(easymotion-s2)
 map <Space> <Plug>(easymotion-lineanywhere)
+nmap <Leader>s vc
 
-" Improve hjkl
-map gj <Plug>(easymotion-j)
-map gk <Plug>(easymotion-k)
+" HJKL mappings
+map J <Plug>(easymotion-j)
+map K <Plug>(easymotion-k)
+noremap <silent> H :bp<CR>
+noremap <silent> L :bn<CR>
+noremap <C-H> H
+noremap <C-J> J
+noremap <C-K> M
+noremap <C-L> L
 noremap j gj
 noremap k gk
 
@@ -285,10 +295,10 @@ let g:airline#themes#molokai#palette.normal_modified = { 'airline_c' :
 
 
 " Smooth Scroll Configuration
-noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 15, 2)<CR>
-noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 15, 2)<CR>
-noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 25, 4)<CR>
-noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 25, 4)<CR>
+noremap <silent> <c-u> L:call smooth_scroll#up(&scroll, 15, 2)<CR>
+noremap <silent> <c-d> H:call smooth_scroll#down(&scroll, 15, 2)<CR>
+noremap <silent> <c-b> L:call smooth_scroll#up(&scroll*2, 25, 4)<CR>
+noremap <silent> <c-f> L:call smooth_scroll#down(&scroll*2, 25, 4)<CR>
 
 
 " System clipboard
@@ -305,8 +315,7 @@ map gp `[v`]
 
 
 " Buffer management
-noremap <silent> <C-H> :bp<CR>
-noremap <silent> <C-L> :bn<CR>
+" See also hjkl section
 nnoremap <silent> <Leader>x :bd<CR>
 nnoremap <silent> <Leader>X :bd!<CR>
 nmap <leader>1 <Plug>AirlineSelectTab1
@@ -346,8 +355,8 @@ noremap <leader>em
 
 
 " Center search results
-:nnoremap n nzz:set hlsearch<CR>
-:nnoremap N Nzz:set hlsearch<CR>
+:nnoremap <silent> n nzz:set hlsearch<CR>
+:nnoremap <silent> N Nzz:set hlsearch<CR>
 :nnoremap * *zz
 :nnoremap # #zz
 :nnoremap g* g*zz
