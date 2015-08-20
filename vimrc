@@ -137,14 +137,19 @@ set incsearch " live incremental searching
 set showmatch " live match highlighting
 set nohlsearch "Highlight search patterns, support reloading
 set gdefault " use the `g` flag by default.
-
+noremap <Leader><Leader>/ :%s/\v
 
 " Visual block
 set virtualedit+=block " allow the cursor to go anywhere
 
 
 " Mouse
-:set mouse=c " no mouse
+set mouse=c " no mouse
+
+
+" Cursor
+set cursorline
+nnoremap <Leader>c :set cursorline!<CR>
 
 
 " Scrolling
@@ -173,14 +178,19 @@ autocmd FileType nerdtree nmap <buffer> L o
 autocmd FileType nerdtree nmap <buffer> H x
 autocmd FileType nerdtree nmap <buffer> <C-CR> go
 autocmd FileType nerdtree nmap <buffer> <S-CR> o:NERDTreeClose<CR>
-autocmd FileType nerdtree noremap <buffer> / /\v^\W*
+autocmd FileType nerdtree map <buffer> / <Plug>(easymotion-sn)\v^\W*
 
 
 " Emmet config
 let g:user_emmet_leader_key='<C-Y>'
 nmap <C-Y>y <C-Y>,
+vmap <C-Y>y <C-Y>,
 imap <C-Y>y <C-Y>,
 
+
+" Surroung config
+nmap '" cs'"
+nmap "' cs"'
 
 " EasyMotion Config
 let g:EasyMotion_do_mapping = 0
@@ -194,7 +204,7 @@ let g:EasyMotion_smartcase = 1
 " Smartsign
 let g:EasyMotion_use_smartsign_us = 1
 " keep cursor column
-let g:EasyMotion_startofline = 1
+let g:EasyMotion_startofline = 0
 " Don't skip folded line
 let g:EasyMotion_skipfoldedline = 0
 " Jump to first with enter & space
@@ -216,20 +226,16 @@ map  N <Plug>(easymotion-prev)
 
 
 " EasyMotion Mapping
-map s <Plug>(easymotion-s)
 map <CR> <Plug>(easymotion-s2)
+map <C-CR> <Plug>(easymotion-s)
 map <Space> <Plug>(easymotion-lineanywhere)
-nmap <Leader>s vc
+
 
 " HJKL mappings
-map J <Plug>(easymotion-j)
-map K <Plug>(easymotion-k)
-noremap <silent> H :bp<CR>
-noremap <silent> L :bn<CR>
-noremap <C-H> H
-noremap <C-J> J
-noremap <C-K> M
-noremap <C-L> L
+map <C-J> <Plug>(easymotion-j)
+map <C-K> <Plug>(easymotion-k)
+noremap <silent> <CR-H> :bp<CR>
+noremap <silent> <CR-L> :bn<CR>
 noremap j gj
 noremap k gk
 
