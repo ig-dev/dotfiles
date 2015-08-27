@@ -32,6 +32,12 @@ Plugin 'tpope/vim-commentary'
 " EasyMotion
 Plugin 'easymotion/vim-easymotion'
 
+" UltiSnips	
+Plugin 'SirVer/ultisnips'
+
+" Snippets
+Plugin 'honza/vim-snippets'
+
 " Tabular
 Plugin 'godlygeek/tabular'
 
@@ -56,8 +62,14 @@ Plugin 'vim-scripts/visualrepeat'
 " CamelCaseMotion
 Plugin 'bkad/CamelCaseMotion'
 
+" Fanfingtastic (ci multiline f)
+Plugin 'dahu/vim-fanfingtastic'
+
 " Easyoperator Line
 Plugin 'haya14busa/vim-easyoperator-line'
+
+" DelimitMate
+Plugin 'Raimondi/delimitMate'
 
 " Smooth Scroll
 Plugin 'terryma/vim-smooth-scroll'
@@ -215,6 +227,9 @@ let g:EasyMotion_prompt = '{n}: '
 " Highlight cursor
 let g:EasyMotion_cursor_highlight = 1
 
+let g:EasyMotion_re_anywhere = '\v[:\-=\(\)]'
+
+
 " Seach /  EasyMotion search
 " clear last search pattern highlight, and enable search result hightlighting
 noremap <Leader>/ :let @/ = ""<CR>:set hlsearch<CR>/\v
@@ -228,21 +243,17 @@ map  N <Plug>(easymotion-prev)
 " EasyMotion Mapping
 map <CR> <Plug>(easymotion-s2)
 map <C-CR> <Plug>(easymotion-s)
+map <S-CR> <Plug>(easymotion-s)
 map <Space> <Plug>(easymotion-lineanywhere)
-
+map <C-Space> <Plug>(easymotion-jumptoanywhere)
 
 " HJKL mappings
 map <C-J> <Plug>(easymotion-j)
 map <C-K> <Plug>(easymotion-k)
-noremap <silent> <CR-H> :bp<CR>
-noremap <silent> <CR-L> :bn<CR>
+map <silent> <C-H> :bp<CR>
+map <silent> <C-L> :bn<CR>
 noremap j gj
 noremap k gk
-
-" Extened word motion
-map  ;w  <Plug>(easymotion-bd-wl)
-map  ;e  <Plug>(easymotion-bd-el)
-omap ;b  <Plug>(easymotion-bl)
 "}}}
 
 " Replace defaut
@@ -275,6 +286,14 @@ let g:ycm_filetype_blacklist = {
 	\}
 
 
+" UltiSnips config
+let g:UltiSnipsExpandTrigger="<C-J>"
+let g:UltiSnipsJumpForwardTrigger="<C-J>"
+let g:UltiSnipsJumpBackwardTrigger="<C-K>"
+imap <silent> <C-Space> <C-J>
+smap <silent> <C-Space> <C-J>
+
+
 " Ctrl-P config
 let g:ctrlp_custom_ignore = {
 	\ 'dir':	'\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|tmp$',
@@ -305,6 +324,10 @@ noremap <silent> <c-u> L:call smooth_scroll#up(&scroll, 15, 2)<CR>
 noremap <silent> <c-d> H:call smooth_scroll#down(&scroll, 15, 2)<CR>
 noremap <silent> <c-b> L:call smooth_scroll#up(&scroll*2, 25, 4)<CR>
 noremap <silent> <c-f> L:call smooth_scroll#down(&scroll*2, 25, 4)<CR>
+
+
+" FanfingTastic Configuration
+let g:fanfingtastic_ignorecase = 1
 
 
 " System clipboard
@@ -399,3 +422,6 @@ map <A-h> <C-W>h
 map <A-l> <C-W>l
 set splitbelow
 set splitright
+
+" Set working directory
+nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
