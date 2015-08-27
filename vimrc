@@ -71,6 +71,9 @@ Plugin 'haya14busa/vim-easyoperator-line'
 " DelimitMate
 Plugin 'Raimondi/delimitMate'
 
+" Expand Region
+Plugin 'terryma/vim-expand-region'
+
 " Smooth Scroll
 Plugin 'terryma/vim-smooth-scroll'
 
@@ -149,7 +152,7 @@ set incsearch " live incremental searching
 set showmatch " live match highlighting
 set nohlsearch "Highlight search patterns, support reloading
 set gdefault " use the `g` flag by default.
-noremap <Leader><Leader>/ :%s/\v
+noremap <Leader>r :%s/\v
 
 " Visual block
 set virtualedit+=block " allow the cursor to go anywhere
@@ -158,22 +161,23 @@ set virtualedit+=block " allow the cursor to go anywhere
 " Mouse
 set mouse=c " no mouse
 
-
-" Cursor
-set cursorline
-nnoremap <Leader>c :set cursorline!<CR>
-
-
 " Scrolling
 set scrolloff=3
 nnoremap <Leader>zz :let &scrolloff=999-&scrolloff<CR>
 
 
 " Keys
-let mapleader = ","
-" avoid shift for command mode
-" nnoremap ; :
-" vnoremap ; :
+let mapleader = "\<Space>"
+
+
+" Pasting
+vnoremap <silent> y y`]
+vnoremap <silent> p p`]
+nnoremap <silent> p p`]
+
+
+" Operations
+nmap <Leader>w :w<CR>
 
 
 " Easyoperator line keys
@@ -243,10 +247,11 @@ map  N <Plug>(easymotion-prev)
 " EasyMotion Mapping
 map <CR> <Plug>(easymotion-s2)
 map <C-CR> <Plug>(easymotion-s)
-map <S-CR> <Plug>(easymotion-s)
-map <Space> <Plug>(easymotion-lineanywhere)
+map <Leader>f <Plug>(easymotion-lineanywhere)
+map <Leader>s <Plug>(easymotion-s)
 map <C-Space> <Plug>(easymotion-jumptoanywhere)
 
+ 
 " HJKL mappings
 map <C-J> <Plug>(easymotion-j)
 map <C-K> <Plug>(easymotion-k)
@@ -287,11 +292,18 @@ let g:ycm_filetype_blacklist = {
 
 
 " UltiSnips config
-let g:UltiSnipsExpandTrigger="<C-J>"
-let g:UltiSnipsJumpForwardTrigger="<C-J>"
-let g:UltiSnipsJumpBackwardTrigger="<C-K>"
-imap <silent> <C-Space> <C-J>
-smap <silent> <C-Space> <C-J>
+let g:UltiSnipsExpandTrigger="<C-CR>"
+let g:UltiSnipsJumpForwardTrigger="<CR>"
+let g:UltiSnipsJumpBackwardTrigger="<C-CR>"
+imap <silent> <S-CR> <C-CR>
+smap <silent> <S-CR> <C-CR>
+imap <silent> <C-Space> <C-CR>
+smap <silent> <C-Space> <C-CR>
+
+
+" Expand Region config
+vmap v <Plug>(expand_region_expand)
+vmap <C-v> <Plug>(expand_region_shrink)
 
 
 " Ctrl-P config
@@ -300,6 +312,18 @@ let g:ctrlp_custom_ignore = {
 	\ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 let g:ctrlp_working_path_mode = '0'
 let g:ctrlp_show_hidden = 1
+
+let g:ctrlp_use_caching = 0
+if executable('ag')
+    set grepprg=ag\ --nogroup\ --nocolor
+
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+else
+  let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+  let g:ctrlp_prompt_mappings = {
+    \ 'AcceptSelection("e")': ['<space>', '<cr>', '<2-LeftMouse>'],
+    \ }
+endif
 
 
 " IndentGuides config
@@ -340,7 +364,7 @@ xmap "" "+
 
 
 " Selecting pasted content
-map gp `[v`]
+map gV `[v`]
 
 
 " Buffer management
@@ -370,8 +394,6 @@ nmap <Leader>k [e
 nmap <Leader>j ]e
 vmap <Leader>k [e
 vmap <Leader>j ]e
-nmap <Leader>h <<
-nmap <Leader>l >>
 vmap <Leader>h <Plug>OutdentBlock
 vmap <Leader>l <Plug>IndentBlock
 
