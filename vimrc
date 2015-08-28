@@ -187,7 +187,7 @@ nmap <Leader>y  <Plug>(easyoperator-line-yank)
 
 
 " NERD Tree config
-map <C-o> :NERDTreeToggle<CR>
+map <Leader>i :NERDTreeToggle<CR>
 autocmd FileType nerdtree nmap <buffer> J <Plug>(easymotion-j)
 autocmd FileType nerdtree nmap <buffer> K <Plug>(easymotion-k)
 autocmd FileType nerdtree nmap <buffer> L o
@@ -305,6 +305,7 @@ vmap <C-v> <Plug>(expand_region_shrink)
 
 
 " Ctrl-P config
+map <Leader>o <C-P>
 let g:ctrlp_custom_ignore = {
 	\ 'dir':	'\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|tmp$',
 	\ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
