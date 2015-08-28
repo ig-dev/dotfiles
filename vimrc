@@ -293,13 +293,11 @@ let g:ycm_filetype_blacklist = {
 
 " UltiSnips config
 let g:UltiSnipsExpandTrigger="<C-CR>"
-let g:UltiSnipsJumpForwardTrigger="<CR>"
-let g:UltiSnipsJumpBackwardTrigger="<C-CR>"
-imap <silent> <S-CR> <C-CR>
-smap <silent> <S-CR> <C-CR>
-imap <silent> <C-Space> <C-CR>
-smap <silent> <C-Space> <C-CR>
-
+let g:UltiSnipsJumpForwardTrigger="<C-CR>"
+let g:UltiSnipsJumpBackwardTrigger="<C-Z>"
+" Experimental
+imap <silent> <S-Space> <C-CR>
+smap <silent> <S-Space> <C-CR>
 
 " Expand Region config
 vmap v <Plug>(expand_region_expand)
