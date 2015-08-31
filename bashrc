@@ -3,7 +3,6 @@
 # ----------------------
 alias ga='git add'
 alias gaa='git add .'
-alias gaaa='git add -A'
 alias gb='git branch'
 alias gbd='git branch -d '
 alias gc='git commit'
