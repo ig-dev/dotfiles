@@ -278,6 +278,14 @@ nmap <expr>' EasyMotion#is_active() ?
 \ '<Plug>(easymotion-prev)' : "'"
 
 
+" Tabular config
+nmap <Leader>a= :Tabularize /=<CR>
+vmap <Leader>a= :Tabularize /=<CR>
+nmap <Leader>a: :Tabularize /:<CR>
+vmap <Leader>a: :Tabularize /:<CR>
+nmap <Leader>ap :Tabularize /\|<CR>
+vmap <Leader>ap :Tabularize /\|<CR>
+
 " YouCompleteMe config
 let g:ycm_filetype_blacklist = {
 	\ 'tagbar' : 1,
