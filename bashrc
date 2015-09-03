@@ -19,12 +19,15 @@ alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm='git merge'
 alias gpl='git pull'
 alias gps='git push'
-alias gr='git rebase'
+alias grb='git rebase'
+alias grs='git reset'
 alias gss='git status -s'
 alias gst='git stash'
 alias gstl='git stash list'
 alias gstp='git stash pop'
 
+# Other aliases
+alias gvim='gvim --remote ""'
 
 # Other things
 if [ -f /etc/bash_completion ]; then
