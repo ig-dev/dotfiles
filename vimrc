@@ -177,7 +177,7 @@ nnoremap <silent> p p`]
 
 
 " Operations
-nmap <Leader>w :w<CR>
+nmap <Leader>q :w<CR>
 
 
 " Easyoperator line keys
@@ -246,7 +246,7 @@ map  N <Plug>(easymotion-prev)
 
 " EasyMotion Mapping
 map <CR> <Plug>(easymotion-s2)
-map <C-CR> <Plug>(easymotion-s)
+map <Leader><CR> <Plug>(easymotion-s)
 map <Leader>f <Plug>(easymotion-lineanywhere)
 map <Leader>s <Plug>(easymotion-s)
 map <C-Space> <Plug>(easymotion-jumptoanywhere)
@@ -324,7 +324,7 @@ let g:ctrlp_use_caching = 0
 if executable('ag')
     set grepprg=ag\ --nogroup\ --nocolor
 
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    let g:ctrlp_user_command = 'ag %s -l --nocolor --hidden -U -g ""'
 else
   let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
   let g:ctrlp_prompt_mappings = {
@@ -359,6 +359,12 @@ noremap <silent> <c-f> L:call smooth_scroll#down(&scroll*2, 25, 4)<CR>
 
 " FanfingTastic Configuration
 let g:fanfingtastic_ignorecase = 1
+
+
+" CamelCaseMotion config
+map <silent> <Leader>w <Plug>CamelCaseMotion_w
+map <silent> <Leader>b <Plug>CamelCaseMotion_b
+map <silent> <Leader>e <Plug>CamelCaseMotion_e
 
 
 " System clipboard
@@ -406,7 +412,7 @@ vmap <Leader>l <Plug>IndentBlock
 
 
 " convert px to em in line
-noremap <leader>em
+noremap <Leader><Leader>em
 	\ :s/^.\{-}\(\d\+\)px.*$/& \/\* (\1:16) \*\//g <CR>
 	\ :s#\v(\d+)px#\=printf("%sem", string(1.0/16*submatch(1)))#<CR>
 	\ :s/ \*\/ \/\* / /g<CR>
@@ -452,5 +458,10 @@ map <A-l> <C-W>l
 set splitbelow
 set splitright
 
+
 " Set working directory
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
+
+
+" Upper-case / lower-case
+map <Leader>u ~
