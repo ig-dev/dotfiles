@@ -177,7 +177,7 @@ nnoremap <silent> p p`]
 
 
 " Operations
-nmap <Leader>q :w<CR>
+nmap <Leader>r :w<CR>
 
 
 " Easyoperator line keys
@@ -245,8 +245,8 @@ map  N <Plug>(easymotion-prev)
 
 
 " EasyMotion Mapping
-map <CR> <Plug>(easymotion-s2)
-map <Leader><CR> <Plug>(easymotion-s)
+map <CR> <Plug>(easymotion-s)
+map <Leader><CR> <Plug>(easymotion-s2)
 map <Leader>f <Plug>(easymotion-lineanywhere)
 map <Leader>s <Plug>(easymotion-s)
 map <C-Space> <Plug>(easymotion-jumptoanywhere)
@@ -334,6 +334,7 @@ endif
 
 
 " IndentGuides config
+let g:indent_guides_default_mapping = 0
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=#222222 ctermbg=234
@@ -365,6 +366,12 @@ let g:fanfingtastic_ignorecase = 1
 map <silent> <Leader>w <Plug>CamelCaseMotion_w
 map <silent> <Leader>b <Plug>CamelCaseMotion_b
 map <silent> <Leader>e <Plug>CamelCaseMotion_e
+omap <silent> <Leader>iw <Plug>CamelCaseMotion_iw
+xmap <silent> <Leader>iw <Plug>CamelCaseMotion_iw
+omap <silent> <Leader>ib <Plug>CamelCaseMotion_ib
+xmap <silent> <Leader>ib <Plug>CamelCaseMotion_ib
+omap <silent> <Leader>ie <Plug>CamelCaseMotion_ie
+xmap <silent> <Leader>ie <Plug>CamelCaseMotion_ie
 
 
 " System clipboard
@@ -382,8 +389,8 @@ map gV `[v`]
 
 " Buffer management
 " See also hjkl section
-nnoremap <silent> <Leader>x :bd<CR>
-nnoremap <silent> <Leader>X :bd!<CR>
+nnoremap <silent> <Leader>q :bd<CR>
+nnoremap <silent> <Leader>Q :bd!<CR>
 nmap <leader>1 <Plug>AirlineSelectTab1
 nmap <leader>2 <Plug>AirlineSelectTab2
 nmap <leader>3 <Plug>AirlineSelectTab3
