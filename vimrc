@@ -50,14 +50,8 @@ Plugin 'mattn/emmet-vim'
 " Airline
 Plugin 'bling/vim-airline'
 
-" Indent Guides
-Plugin 'nathanaelkane/vim-indent-guides'
-
 " Repeat
 Plugin 'tpope/vim-repeat'
-
-" Visual repeat
-Plugin 'vim-scripts/visualrepeat'
 
 " CamelCaseMotion
 Plugin 'bkad/CamelCaseMotion'
@@ -73,9 +67,6 @@ Plugin 'Raimondi/delimitMate'
 
 " Expand Region
 Plugin 'terryma/vim-expand-region'
-
-" Smooth Scroll
-Plugin 'terryma/vim-smooth-scroll'
 
 " Molokai theme
 Plugin 'tomasr/molokai'
@@ -351,13 +342,6 @@ let g:airline#themes#molokai#palette.normal_modified = { 'airline_c' :
 	\ [ '#ffffff' , '#4e52bc' , 23 , 52 , '' ] , }
 
 
-" Smooth Scroll Configuration
-noremap <silent> <c-u> L:call smooth_scroll#up(&scroll, 15, 2)<CR>
-noremap <silent> <c-d> H:call smooth_scroll#down(&scroll, 15, 2)<CR>
-noremap <silent> <c-b> L:call smooth_scroll#up(&scroll*2, 25, 4)<CR>
-noremap <silent> <c-f> L:call smooth_scroll#down(&scroll*2, 25, 4)<CR>
-
-
 " FanfingTastic Configuration
 let g:fanfingtastic_ignorecase = 1
 
@@ -404,7 +388,7 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 
 " Search highlighting
 map <silent> <C-N> :set hls!<CR>
-map <silent> <Esc><Esc> :nohlsearch<CR>
+map <silent> <Leader><Esc> :nohlsearch<CR>
 
 
 " Moving content
