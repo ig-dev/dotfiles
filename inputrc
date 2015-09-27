@@ -1,0 +1,8 @@
+TAB: menu-complete
+"\e[Z": menu-complete-backward
+
+"\C-l": menu-complete
+"\C-h": menu-complete-backward
+
+"\C-j": history-search-forward
+"\C-k": history-search-backward
