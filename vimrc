@@ -119,10 +119,10 @@ set number
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
-set noexpandtab " don't use spaces instead of tabs.
-set smarttab " let's tab key insert 'tab stops', and bksp deletes tabs.
-set shiftround " tab / shifting moves to closest tabstop.
-set autoindent " Match indents on new lines.
+set expandtab   " use spaces instead of tabs.
+set smarttab    " let's tab key insert 'tab stops', and bksp deletes tabs.
+set shiftround  " tab / shifting moves to closest tabstop.
+set autoindent  " Match indents on new lines.
 set smartindent " Intellegently dedent / indent new lines based on rules.
 
 
@@ -186,6 +186,7 @@ autocmd FileType nerdtree nmap <buffer> H x
 autocmd FileType nerdtree nmap <buffer> <C-CR> go
 autocmd FileType nerdtree nmap <buffer> <S-CR> o:NERDTreeClose<CR>
 autocmd FileType nerdtree map <buffer> / <Plug>(easymotion-sn)\v^\W*
+autocmd FileType nerdtree map <buffer> <Esc> :NERDTreeClose<CR>
 
 
 " Emmet config
@@ -198,6 +199,8 @@ imap <C-Y>y <C-Y>,
 " Surroung config
 nmap '" cs'"
 nmap "' cs"'
+nmap <Leader>'w ysiw"
+nmap <Leader>'W ysiW"
 
 " EasyMotion Config
 let g:EasyMotion_do_mapping = 0
@@ -359,8 +362,8 @@ xmap <silent> <Leader>ie <Plug>CamelCaseMotion_ie
 
 
 " System clipboard
-nnoremap <Leader>p "+p
-nnoremap <Leader>P "+P
+noremap <Leader>p "+p
+noremap <Leader>P "+P
 noremap <Leader>Y "+Y
 " experimental
 nmap "" "+
@@ -387,8 +390,13 @@ nmap <leader>9 <Plug>AirlineSelectTab9
 
 
 " Search highlighting
-map <silent> <C-N> :set hls!<CR>
+noremap <silent> <C-N> :set hls!<CR>
 map <silent> <Leader><Esc> :nohlsearch<CR>
+
+
+" Redraw screen
+noremap <silent> <C-R> :redraw!<CR><C-L>
+
 
 
 " Moving content
