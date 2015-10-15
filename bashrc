@@ -8,7 +8,6 @@ alias gb='git branch'
 alias gbd='git branch -d '
 alias gc='git commit'
 alias gcm='git commit -m'
-alias gcam='git commit -a -m'
 alias gco='git checkout'
 alias gcob='git checkout -b'
 alias gcom='git checkout master'
@@ -33,6 +32,14 @@ alias grset='git remote set-url origin'
 alias gradd='git remote add origin'
 alias gstat='git diff --shortstat `git hash-object -t tree /dev/null`'
 alias gstats='git diff --stat `git hash-object -t tree /dev/null`'
+
+function gcam() {
+	if [ -n "$1" ]
+	then
+		git add -A;
+		git commit -m "$1";
+	fi
+}
 
 # Other aliases
 alias gvim='gvim --remote "" $1 > /dev/null 2>&1'
