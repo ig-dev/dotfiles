@@ -1,5 +1,5 @@
-TAB: menu-complete
-"\e[Z": menu-complete-backward
+# TAB: menu-complete
+# "\e[Z": menu-complete-backward
 
 "\C-l": menu-complete
 "\C-h": menu-complete-backward
