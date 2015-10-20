@@ -360,6 +360,9 @@ xmap <silent> <Leader>ib <Plug>CamelCaseMotion_ib
 omap <silent> <Leader>ie <Plug>CamelCaseMotion_ie
 xmap <silent> <Leader>ie <Plug>CamelCaseMotion_ie
 
+" Sleuth (indentation) config
+nmap <Leader>gi <Plug>DetectIndentation
+
 
 " System clipboard
 noremap <Leader>p "+p
@@ -464,3 +467,6 @@ nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " Upper-case / lower-case
 map <Leader>u ~
+
+
+

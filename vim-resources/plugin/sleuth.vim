@@ -166,6 +166,7 @@ endif
 augroup sleuth
   autocmd!
   autocmd FileType * call s:detect()
+  nmap <Plug>DetectIndentation :call <SID>detect()<CR>
 augroup END
 
 " vim:set et sw=2:
