@@ -9,3 +9,4 @@ export PS1='\[\033[01;37m\]>\[\033[01;34m\] \w\[\033[01;32m\]$(__git_ps1)\[\033[
 if [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
+
