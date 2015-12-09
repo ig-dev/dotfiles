@@ -20,8 +20,3 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
-
-# Node in PATH
-if [ -d "/data/opt/node/bin" ] ; then
-    PATH="$PATH:/data/opt/node/bin"
-fi
