@@ -1,3 +1,5 @@
+_Z_CMD=j
+. /data/opt/z/z.sh
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
