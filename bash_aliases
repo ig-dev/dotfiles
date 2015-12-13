@@ -1,3 +1,6 @@
+# Find aliases when using sudo
+alias sudo='sudo ' # Trailing space tells bash that the command that follows can be an alias.
+
 # ----------------------
 # Git Aliases
 # ----------------------
@@ -47,6 +50,8 @@ function gcam() {
 # ----------------------
 
 alias gvim='gvim --remote "" $1 > /dev/null 2>&1'
+alias g='gvim --remote "" $1 > /dev/null 2>&1'
+alias gg='sudo -E gvim --remote "" $1  > /dev/null 2>&1'
 
 
 # ----------------------
