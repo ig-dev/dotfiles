@@ -1,0 +1,5 @@
+setxkbmap -option caps:escape
+# Node in PATH
+if [ -d "/data/opt/node/bin" ] ; then
+    PATH="$PATH:/data/opt/node/bin"
+fi
