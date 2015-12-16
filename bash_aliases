@@ -49,9 +49,8 @@ function gcam() {
 # GVIM
 # ----------------------
 
-alias gvim='gvim --remote "" $1 > /dev/null 2>&1'
-alias g='gvim --remote "" $1 > /dev/null 2>&1'
-alias gg='sudo -E gvim --remote "" $1  > /dev/null 2>&1'
+alias g="gvim --remote "" $1 > /dev/null 2>&1"
+alias gg="sudo -E gvim --remote "" $1  > /dev/null 2>&1"
 
 
 # ----------------------
