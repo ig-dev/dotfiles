@@ -1,4 +1,6 @@
+setxkbmap -option grp:rctrl_rshift_toggle us,de
 setxkbmap -option caps:escape
+
 export EDITOR=/usr/bin/gvim
 # Node in PATH
 if [ -d "/data/opt/node/bin" ] ; then
