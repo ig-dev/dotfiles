@@ -168,7 +168,7 @@ nnoremap <silent> p p`]
 
 
 " Operations
-nmap <Leader>r :w<CR>
+nmap <Leader>s :w<CR>
 
 
 " Easyoperator line keys
@@ -242,7 +242,6 @@ map  N <Plug>(easymotion-prev)
 map <CR> <Plug>(easymotion-s)
 map <Leader><CR> <Plug>(easymotion-s2)
 map <Leader>f <Plug>(easymotion-lineanywhere)
-map <Leader>s <Plug>(easymotion-s)
 map <C-Space> <Plug>(easymotion-jumptoanywhere)
 
  
