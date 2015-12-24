@@ -1,3 +1,12 @@
+# ----------------------
+# Utilities
+# ----------------------
+
+# Run in background without making noise
+function open() {
+    nohup "$@" > /dev/null &
+}
+
 # Find aliases when using sudo
 alias sudo='sudo ' # Trailing space tells bash that the command that follows can be an alias.
 
