@@ -10,6 +10,7 @@ function open() {
 # Find aliases when using sudo
 alias sudo='sudo ' # Trailing space tells bash that the command that follows can be an alias.
 
+alias invoice='python ~/projects/python/gnucash-invoice-printer/printer.py /home/ignatius/Documents/Bytezeit/Accounting/accounts.gnucash '
 # ----------------------
 # Git Aliases
 # ----------------------
