@@ -60,7 +60,7 @@ function! s:guess(lines) abort
       let backtick = 1
     endif
 
-    let softtab = repeat(' ', 8)
+    let softtab = repeat(' ', 4)
     if line =~# '^\t'
       let heuristics.hard += 1
     elseif line =~# '^' . softtab

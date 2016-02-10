@@ -95,6 +95,7 @@ Plugin 'kchmck/vim-coffee-script'
 
 " required
 call vundle#end()
+filetype plugin indent on
 
 
 " Filetype auto-detection
@@ -178,7 +179,7 @@ nmap <Leader>y  <Plug>(easyoperator-line-yank)
 
 
 " NERD Tree config
-map <Leader>i :NERDTreeToggle<CR>
+map <Leader>O :NERDTreeToggle<CR>
 autocmd FileType nerdtree nmap <buffer> J <Plug>(easymotion-j)
 autocmd FileType nerdtree nmap <buffer> K <Plug>(easymotion-k)
 autocmd FileType nerdtree nmap <buffer> L o
@@ -339,7 +340,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#buffer_idx_mode = 1
 " modified tab color
-source ~/.vim/bundle/vim-airline/autoload/airline/themes/molokai.vim
 let g:airline#themes#molokai#palette.normal_modified = { 'airline_c' :
 	\ [ '#ffffff' , '#4e52bc' , 23 , 52 , '' ] , }
 
@@ -375,7 +375,6 @@ xmap "" "+
 " Selecting pasted content
 map gV `[v`]
 
-
 " Buffer management
 " See also hjkl section
 nnoremap <silent> <Leader>q :bd<CR>
@@ -397,7 +396,7 @@ map <silent> <Leader><Esc> :nohlsearch<CR>
 
 
 " Redraw screen
-noremap <silent> <C-R> :redraw!<CR><C-L>
+noremap <silent> <Leader>-` :redraw!<CR><C-L>
 
 
 
