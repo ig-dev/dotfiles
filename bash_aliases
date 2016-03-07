@@ -7,6 +7,21 @@ function open() {
     nohup "$@" > /dev/null &
 }
 
+function setauthor() {
+    if [ "$1" == "ig" ]
+        then
+            git config user.name "Ignatius"
+            git config user.email ignatius.inbox@gmail.com
+            echo "Set author ignatius..."
+    fi
+    if [ "$1" == "bz" ]
+        then
+            git config user.name "Ignatius"
+            git config user.email ignatius@bytezeit.com
+            echo "Set author ignatius@bytezeit..."
+    fi
+}
+
 # Find aliases when using sudo
 alias sudo='sudo ' # Trailing space tells bash that the command that follows can be an alias.
 
