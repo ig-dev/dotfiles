@@ -1,5 +1,7 @@
-_Z_CMD=j
-. /data/opt/z/z.sh
+if [ -f /data/opt/z/z.sh ]; then
+    _Z_CMD=j
+    . /data/opt/z/z.sh
+fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -12,3 +14,6 @@ if [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
+if [ -f ~/dotfiles/sensible_bash ]; then
+	. ~/dotfiles/sensible_bash
+fi
