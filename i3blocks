@@ -24,9 +24,9 @@
 separator_block_width=15
 
 [timetracker]
-command=t now
+command=/data/scripts/timetrap_status.sh
 color=#AAAAFF
-interval=5
+interval=1
 
 # [volume]
 # label=♪
@@ -47,11 +47,11 @@ instance=eth0
 command=/usr/share/i3blocks/network
 interval=10
 
-[cpu]
-label=
-command=/usr/share/i3blocks/cpu_usage
-interval=10
-min_width=99.99%
+# [cpu]
+# label=
+# command=/usr/share/i3blocks/cpu_usage
+# interval=10
+# min_width=99.99%
 #separator=false
 
 [battery]
@@ -65,4 +65,4 @@ interval=60
 
 [time]
 command=date '+%H:%M:%S'
-interval=5
+interval=1
