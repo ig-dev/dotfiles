@@ -22,10 +22,14 @@ function setauthor() {
     fi
 }
 
-# Find aliases when using sudo
-alias sudo='sudo ' # Trailing space tells bash that the command that follows can be an alias.
 
+
+# ----------------------
+# Helpers
+# ----------------------
 alias invoice='python ~/projects/python/gnucash-invoice-printer/printer.py /home/ignatius/Documents/Bytezeit/Accounting/accounts.gnucash '
+alias ti='t in'
+
 # ----------------------
 # Git Aliases
 # ----------------------
@@ -107,3 +111,5 @@ alias cd......="cd ../../../../.."
 # Sudo
 # ----------------------
 alias fck='sudo $(history -p \!\!)' 
+# Find aliases when using sudo
+alias sudo='sudo ' # Trailing space tells bash that the command that follows can be an alias.
