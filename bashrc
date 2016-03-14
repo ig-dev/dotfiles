@@ -3,8 +3,8 @@ if [ -f /data/opt/z/z.sh ]; then
     . /data/opt/z/z.sh
 fi
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
+if [ -f ~/dotfiles/bash/bash_aliases ]; then
+    . ~/dotfiles/bash/bash_aliases
 fi
 
 export GIT_PS1_SHOWDIRTYSTATE=1
@@ -14,6 +14,6 @@ if [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
-if [ -f ~/dotfiles/sensible_bash ]; then
-	. ~/dotfiles/sensible_bash
+if [ -f ~/dotfiles/bash/sensible_bash ]; then
+	. ~/dotfiles/bash/sensible_bash
 fi
