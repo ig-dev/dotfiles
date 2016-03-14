@@ -17,3 +17,7 @@ fi
 if [ -f ~/dotfiles/bash/sensible_bash ]; then
 	. ~/dotfiles/bash/sensible_bash
 fi
+
+if [ -f ~/dotfiles/bash/timetrap-autocomplete.bash ]; then
+	. ~/dotfiles/bash/timetrap-autocomplete.bash
+fi
