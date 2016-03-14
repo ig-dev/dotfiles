@@ -184,3 +184,6 @@ bindsym $mod+shift+u exec t resume
 
 # background
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+
+# autostart
+exec --no-startup-id source ~/.profile
