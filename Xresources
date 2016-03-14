@@ -47,5 +47,5 @@ URxvt.shading:       10
 URxvt.scrollBar:		false
 
 URxvt.perl-ext-common: 	  	default,clipboard
-URxvt.keysym.Shift-Mod1-C: perl:clipboard:copy
-URxvt.keysym.Shift-Mod1-V: perl:clipboard:paste
+URxvt.keysym.C-M-y: perl:clipboard:copy
+URxvt.keysym.C-M-p: perl:clipboard:paste
