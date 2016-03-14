@@ -29,6 +29,12 @@ function setauthor() {
 # ----------------------
 alias invoice='python ~/projects/python/gnucash-invoice-printer/printer.py /home/ignatius/Documents/Bytezeit/Accounting/accounts.gnucash '
 alias ti='t in'
+alias tt='t today all -f by_day'
+alias ty='t yesterday all -f by_day'
+alias tw='t week all -f by_day'
+alias tm='t month all -f by_day'
+alias td='t display -f by_day'
+alias tid='t -f ids'
 
 # ----------------------
 # Git Aliases
