@@ -25,7 +25,7 @@ separator_block_width=15
 
 [timetracker]
 command=/data/scripts/timetrap_status.sh
-color=#AAAAFF
+color=#FFFF66
 interval=1
 
 # [volume]
