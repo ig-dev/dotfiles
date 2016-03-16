@@ -35,6 +35,7 @@ alias tw='t week all -f by_day'
 alias tm='t month all -f by_day'
 alias td='t display -f by_day'
 alias tid='t -f ids'
+alias shutdown='sudo shutdown -h now'
 
 # ----------------------
 # Git Aliases
