@@ -1,3 +1,6 @@
+export GIT_PS1_SHOWDIRTYSTATE=1
+export PS1='\[\033[01;37m\]>\[\033[01;34m\] \w\[\033[01;32m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
+
 # put Node in PATH
 if [ -d "/data/opt/node/bin" ] ; then
     export PATH="$PATH:/data/opt/node/bin" 
@@ -12,19 +15,12 @@ if [ -f ~/dotfiles/bash/bash_aliases ]; then
     . ~/dotfiles/bash/bash_aliases
 fi
 
-export GIT_PS1_SHOWDIRTYSTATE=1
-export PS1='\[\033[01;37m\]>\[\033[01;34m\] \w\[\033[01;32m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
-
 if [ -f /etc/bash_completion ]; then
 	. /etc/bash_completion
 fi
 
 if [ -f ~/dotfiles/bash/sensible_bash ]; then
 	. ~/dotfiles/bash/sensible_bash
-fi
-
-if [ -f ~/.profile ]; then
-	. ~/.profile
 fi
 
 if [ -f ~/dotfiles/bash/timetrap-autocomplete.bash ]; then
