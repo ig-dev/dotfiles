@@ -1,3 +1,8 @@
+# put Node in PATH
+if [ -d "/data/opt/node/bin" ] ; then
+    export PATH="$PATH:/data/opt/node/bin" 
+fi
+
 if [ -f /data/opt/z/z.sh ]; then
     _Z_CMD=j
     . /data/opt/z/z.sh
@@ -16,6 +21,10 @@ fi
 
 if [ -f ~/dotfiles/bash/sensible_bash ]; then
 	. ~/dotfiles/bash/sensible_bash
+fi
+
+if [ -f ~/.profile ]; then
+	. ~/.profile
 fi
 
 if [ -f ~/dotfiles/bash/timetrap-autocomplete.bash ]; then
