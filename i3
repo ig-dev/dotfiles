@@ -179,6 +179,7 @@ for_window [class="Guake"] floating enable
 
 # application shortcuts
 bindsym $mod+g exec google-chrome
+bindsym $mod+t exec thunar
 bindsym $mod+shift+o exec t out
 bindsym $mod+shift+u exec t resume
 
@@ -186,4 +187,4 @@ bindsym $mod+shift+u exec t resume
 exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
 
 # autostart
-exec --no-startup-id source ~/.profile
+exec --no-startup-id bash -c "source ~/.profile"
