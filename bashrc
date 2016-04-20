@@ -11,6 +11,10 @@ if [ -f /data/opt/z/z.sh ]; then
     . /data/opt/z/z.sh
 fi
 
+if [ -f ~/dotfiles/bash/git-completion.bash ]; then
+  . ~/dotfiles/bash/git-completion.bash
+fi
+
 if [ -f ~/dotfiles/bash/bash_aliases ]; then
     . ~/dotfiles/bash/bash_aliases
 fi

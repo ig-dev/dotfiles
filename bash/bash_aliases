@@ -81,6 +81,12 @@ alias gradd='git remote add origin'
 alias gstat='git diff --shortstat `git hash-object -t tree /dev/null`'
 alias gstats='git diff --stat `git hash-object -t tree /dev/null`'
 
+__git_complete gco _git_checkout
+__git_complete gc _git_commit
+__git_complete grb _git_rebase
+__git_complete gps _git_push
+__git_complete gpl _git_pull
+
 function gcam() {
 	if [ -n "$1" ]
 	then
