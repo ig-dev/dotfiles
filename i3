@@ -28,6 +28,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec TERM=rxvt-unicode-256color urxvtcd
+bindsym $mod+Shift+Return exec xterm
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -174,6 +175,13 @@ focus_follows_mouse no
 # for_window [class="Keepassx"] floating enable
 for_window [class="Guake"] floating enable
 
+# Borders
+hide_edge_borders both
+for_window [title=" - Google Chrome$"] border none
+for_window [title="^xterm$"] border pixle 1
+for_window [class="^URxvt$"] border pixel 2
+for_window [class="^urxvt$"] border pixel 2
+
 # application shortcuts
 bindsym $mod+g exec google-chrome
 bindsym $mod+t exec thunar
@@ -185,3 +193,4 @@ exec --no-startup-id feh --bg-fill ~/Pictures/Christian/Jesus-washing-feet.jpg
 
 # autostart
 exec --no-startup-id bash -c "sleep 10; source ~/.profile"
+
