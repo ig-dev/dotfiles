@@ -1,7 +1,7 @@
 [push]
 	default = current
 [core]
-	editor = nano
+	editor = vim
 	pager = diff-so-fancy | less --tabs=1,5 -R
 [color "diff-highlight"]
 	oldNormal = red bold

@@ -159,22 +159,19 @@ popup_during_fullscreen leave_fullscreen
 
 # Startup script
 exec /home/ignatius/startup.sh
-exec keepassx /home/ignatius/Documents/access.kdb -min -lock
+exec rm /home/ignatius/Documents/access.kdb.lock; keepassx /home/ignatius/Documents/access.kdb -min
 exec --no-startup-id /usr/bin/nm-applet
-exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/geary'
-# exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/rhythmbox'
-exec --no-startup-id i3-msg 'workspace 1'
-exec guake
+exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/google-chrome-stable'
 
 #  Orientation for new workspaces
 default_orientation vertical
 
 # Focus follows mouse
 focus_follows_mouse no
-focus_follows_mouse yes|no
+# focus_follows_mouse yes|no
 
 # Floating apps
-for_window [class="Keepassx"] floating enable
+# for_window [class="Keepassx"] floating enable
 for_window [class="Guake"] floating enable
 
 # application shortcuts
@@ -184,7 +181,7 @@ bindsym $mod+shift+o exec t out
 bindsym $mod+shift+u exec t resume
 
 # background
-exec --no-startup-id feh --bg-fill ~/Pictures/wallpaper.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/Christian/Jesus-washing-feet.jpg
 
 # autostart
-exec --no-startup-id bash -c "source ~/.profile"
+exec --no-startup-id bash -c "sleep 10; source ~/.profile"

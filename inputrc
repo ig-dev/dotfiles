@@ -1,8 +1,12 @@
 # TAB: menu-complete
 # "\e[Z": menu-complete-backward
 
+set editing-mode vi
+set keymap vi-command
+
 "\C-l": menu-complete
 "\C-h": menu-complete-backward
 
 "\C-j": history-search-forward
 "\C-k": history-search-backward
+
