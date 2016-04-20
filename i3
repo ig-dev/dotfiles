@@ -174,10 +174,12 @@ focus_follows_mouse no
 # Floating apps
 # for_window [class="Keepassx"] floating enable
 for_window [class="Guake"] floating enable
+for_window [window_role="^pop-up$"] floating enable
 
 # Borders
 hide_edge_borders both
-for_window [title=" - Google Chrome$"] border none
+for_window [class="^google-chrome$"] border none
+for_window [class="^google-chrome$" window_role="^pop-up$"] border normal
 for_window [title="^xterm$"] border pixle 1
 for_window [class="^URxvt$"] border pixel 2
 for_window [class="^urxvt$"] border pixel 2
