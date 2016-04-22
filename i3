@@ -178,11 +178,10 @@ for_window [window_role="^pop-up$"] floating enable
 
 # Borders
 hide_edge_borders both
-for_window [class="^google-chrome$"] border none
+for_window [class="^google-chrome$"] border pixel 1
 for_window [class="^google-chrome$" window_role="^pop-up$"] border normal
-for_window [title="^xterm$"] border pixle 1
-for_window [class="^URxvt$"] border pixel 2
-for_window [class="^urxvt$"] border pixel 2
+for_window [title="^(xterm|XTerm)$"] border pixel 2
+for_window [class="^(urxvt|URxvt)$"] border pixel 2
 
 # application shortcuts
 bindsym $mod+g exec google-chrome
