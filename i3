@@ -151,7 +151,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3blocks
-        # mode hide
+        mode hide
         modifier Mod1
 }
 
@@ -180,6 +180,7 @@ for_window [window_role="^pop-up$"] floating enable
 hide_edge_borders both
 for_window [class="^google-chrome$"] border pixel 1
 for_window [class="^google-chrome$" window_role="^pop-up$"] border normal
+for_window [class="^(code|Code)$"] border pixel 1
 for_window [title="^(xterm|XTerm)$"] border pixel 2
 for_window [class="^(urxvt|URxvt)$"] border pixel 2
 
@@ -187,11 +188,12 @@ for_window [class="^(urxvt|URxvt)$"] border pixel 2
 bindsym $mod+g exec google-chrome
 bindsym $mod+t exec thunar
 bindsym $mod+shift+o exec t out
-bindsym $mod+shift+u exec t resume
+bindsym $mod+shift+c exec t resume
 
 # background
 exec --no-startup-id feh --bg-fill ~/Pictures/Christian/Jesus-washing-feet.jpg
 
 # autostart
 exec --no-startup-id bash -c "sleep 10; source ~/.profile"
-
+#bindsym Escape exec xdotool key 66
+# bindcode 66 exec source ~/.profile
