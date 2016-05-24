@@ -1,6 +1,8 @@
 export GIT_PS1_SHOWDIRTYSTATE=1
 export PS1='\[\033[01;37m\]>\[\033[01;34m\] \w\[\033[01;32m\]$(__git_ps1)\[\033[01;34m\] \$\[\033[00m\] '
 
+stty -ixon
+
 # put Node in PATH
 if [ -d "/data/opt/node/bin" ] ; then
     export PATH="$PATH:/data/opt/node/bin" 
