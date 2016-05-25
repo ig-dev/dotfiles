@@ -10,13 +10,16 @@ omap / <Plug>(easymotion-tn)
 map F <Plug>(easymotion-lineanywhere)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
-map gb :call SearchFor('[()]')<CR>
-map gq :call SearchFor("[\"']")<CR>
-map gh :call SearchFor('[\[\]]')<CR>
-map ga :call SearchFor('[<>]')<CR>
-map gc :call SearchFor('[{}]')<CR>
-map gm :call SearchFor('[-+=]')<CR>
-map gx :call SearchFor('[@#$%^&*\!/]')<CR>
+map gxb :call SearchFor('[()]')<CR>
+map gxq :call SearchFor("[\"']")<CR>
+map gxs :call SearchFor('[\[\]]')<CR>
+map gxa :call SearchFor('[<>]')<CR>
+map gxc :call SearchFor('[{}]')<CR>
+map gxm :call SearchFor('-')<CR>
+map gxp :call SearchFor('+')<CR>
+map gxe :call SearchFor('=')<CR>
+map gxo :call SearchFor('[@#$%^&*\!/]')<CR>
+map gb gxb
 
 function! SearchFor(query)
   let @/ = a:query
