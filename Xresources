@@ -44,7 +44,8 @@ urxvt*background: black
 
 URxvt.transparent:   true
 URxvt.shading:       10
-URxvt.scrollBar:		false
+URxvt*scrollBar: false 
+URxvt*srollBar_right: true 
 
 URxvt.perl-ext-common: 	  	default,clipboard
 URxvt.keysym.C-M-y: perl:clipboard:copy

@@ -21,4 +21,4 @@ map gx :call SearchFor('[@#$%^&*\!/]')<CR>
 function! SearchFor(query)
   let @/ = a:query
   call EasyMotion#Search(0, 2, 0)
-  endfunction
+endfunction

@@ -51,6 +51,7 @@ nnoremap <C-S> :w<CR>
 " File closing
 nnoremap <silent> <C-Q> :bd<CR>
 nnoremap <silent> <C-S-Q> :bd!<CR>
+autocmd BufDelete * call CloseOnLast()
 
 " Leader
 map <Space> <Leader>
@@ -89,3 +90,6 @@ map U ~
 
 " Reload configuration
 map <C-L> :so %<CR>
+
+" Auto reload changed files
+set autoread
