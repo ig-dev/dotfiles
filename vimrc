@@ -84,8 +84,8 @@ vnoremap <Leader>P "+P
 xnoremap p "_dP
 
 " Move to beginning/end of line
-nmap ge $
-nmap gs ^
+map ge $
+map gs ^
 
 " Change capitalization
 map U ~
