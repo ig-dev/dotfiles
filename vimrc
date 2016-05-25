@@ -16,6 +16,8 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'tpope/vim-abolish'
+Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -52,7 +54,7 @@ nnoremap <C-S> :w<CR>
 
 " File closing
 nnoremap <silent> <C-Q> :bd<CR>
-nnoremap <silent> <C-S-Q> :bd!<CR>
+nnoremap <silent> <Space><C-Q> :bd!<CR>
 autocmd BufDelete * call QuitIfLastBuffer()
 
 " Leader
@@ -92,3 +94,6 @@ map U ~
 
 " Auto reload changed files
 set autoread
+
+" Tabs
+set tabstop=4
