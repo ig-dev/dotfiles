@@ -7,7 +7,7 @@ let g:EasyMotion_space_jump_first = 1
 nmap f <Plug>(easymotion-overwin-f)
 map  / <Plug>(easymotion-sn)
 omap / <Plug>(easymotion-tn)
-map F <Plug>(easymotion-lineanywhere)
+map <Leader>f <Plug>(easymotion-lineanywhere)
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 map gxb :call SearchFor('[()]')<CR>

@@ -6,9 +6,12 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " Alphabetic by plugin name
+Plugin 'tpope/vim-abolish'
 Plugin 'bling/vim-airline'
+Plugin 'rking/ag.vim'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'tomasr/molokai'
 Plugin 'tpope/vim-surround'
@@ -16,8 +19,6 @@ Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'tpope/vim-abolish'
-Plugin 'rking/ag.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -53,9 +54,10 @@ set noswapfile
 nnoremap <C-S> :w<CR>
 
 " File closing
-nnoremap <silent> <C-Q> :bd<CR>
-nnoremap <silent> <Space><C-Q> :bd!<CR>
-autocmd BufDelete * call QuitIfLastBuffer()
+nnoremap <silent> <C-W> :call CloseBufferOrQuit()<CR>
+nnoremap <silent> <Space><C-W> :bd!<CR>
+nnoremap <silent> <C-Q> :q<CR>
+nnoremap <silent> <Space><Space><C-Q> :q!<CR>
 
 " Leader
 map <Space> <Leader>
@@ -97,3 +99,6 @@ set autoread
 
 " Tabs
 set tabstop=4
+
+" disable weird popup
+nmap Q <Nop>
