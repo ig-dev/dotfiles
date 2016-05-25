@@ -53,7 +53,7 @@ nnoremap <C-S> :w<CR>
 " File closing
 nnoremap <silent> <C-Q> :bd<CR>
 nnoremap <silent> <C-S-Q> :bd!<CR>
-autocmd BufDelete * call CloseOnLast()
+autocmd BufDelete * call QuitIfLastBuffer()
 
 " Leader
 map <Space> <Leader>
@@ -89,9 +89,6 @@ map gs ^
 
 " Change capitalization
 map U ~
-
-" Reload configuration
-map <C-L> :so %<CR>
 
 " Auto reload changed files
 set autoread
