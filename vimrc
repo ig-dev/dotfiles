@@ -51,7 +51,8 @@ set nowritebackup
 set noswapfile
 
 " File saving
-nnoremap <C-S> :w<CR>
+noremap <C-S> :w<CR>
+inoremap <C-S> <C-O>:w<CR>
 
 " File closing
 nnoremap <silent> <C-W> :call CloseBufferOrQuit()<CR>
@@ -87,6 +88,14 @@ vnoremap <Leader>P "+P
 " Do not overwrite register when pasting in visual mode
 xnoremap p "_dP
 
+" Do not overwrite register when using x/X
+noremap x "_x
+noremap X "_X
+
+" Deletion without overwriting register
+map <Space>d "_d
+map <Space>D "_D
+
 " Move to beginning/end of line
 map ge $
 map gs ^
@@ -99,6 +108,7 @@ set autoread
 
 " Tabs
 set tabstop=4
+set shiftwidth=4
 
 " disable weird popup
 nmap Q <Nop>
