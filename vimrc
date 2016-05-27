@@ -10,6 +10,7 @@ Plugin 'tpope/vim-abolish'
 Plugin 'bling/vim-airline'
 Plugin 'rking/ag.vim'
 Plugin 'bkad/CamelCaseMotion'
+Plugin 'tpope/vim-commentary'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'easymotion/vim-easymotion'
@@ -26,7 +27,7 @@ filetype plugin indent on
 " Buffer switching
 map <silent> <C-H> :bp<CR>
 map <silent> <C-L> :bn<CR>
- 
+
 " Allow unsaved buffers
 set hidden
 
@@ -36,6 +37,8 @@ colorscheme molokai
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 12
 set number
 syntax on
+set noshowmode
+set laststatus=0
 
 " Search
 set ignorecase
@@ -45,10 +48,17 @@ set showmatch " live match highlighting
 set nohlsearch "Highlight search patterns, support reloading
 set gdefault " use the `g` flag by default.
 
+" Tabs
+set tabstop=4
+set shiftwidth=4
+
 " Garbage files
 set nobackup
 set nowritebackup
 set noswapfile
+
+" Auto reload changed files
+set autoread
 
 " File saving
 noremap <C-S> :w<CR>
@@ -67,23 +77,23 @@ map <Space> <Leader>
 nmap gp `[v`]
 
 " Indentation
-vnoremap <Tab> >gv
-vnoremap <S-Tab> <gv
+xnoremap <Tab> >gv
+xnoremap <S-Tab> <gv
 nnoremap <Tab> >>
 nnoremap <S-Tab> <<
 
 " System clipboard
-inoremap <C-P> <C-R>+
+inoremap <C-V> <C-R>+
+noremap <Leader>d "+d
 nnoremap <Leader>p "+p
 nnoremap <Leader>P "+P
 nnoremap <Leader>Y "+Y
 nnoremap <Leader>dd "+dd
 nnoremap <Leader>D "+D
 nnoremap <Leader>yy "+yy
-vnoremap <Leader>y "+y
-vnoremap <Leader>d "+d
-vnoremap <Leader>p "+p
-vnoremap <Leader>P "+P
+xnoremap <Leader>y "+y
+xnoremap <Leader>p "+p
+xnoremap <Leader>P "+P
 
 " Do not overwrite register when pasting in visual mode
 xnoremap p "_dP
@@ -94,21 +104,31 @@ noremap X "_X
 
 " Deletion without overwriting register
 map <Space>d "_d
+map <Space>dd "_dd
 map <Space>D "_D
 
 " Move to beginning/end of line
 map ge $
 map gs ^
 
+" move character horizontally
+nnoremap <Space>l "xx"xp
+nnoremap <Space>h "xxh"xP
+
 " Change capitalization
 map U ~
 
-" Auto reload changed files
-set autoread
-
-" Tabs
-set tabstop=4
-set shiftwidth=4
+" turn off search highlighting
+nmap <Space><Esc> :nohlsearch<CR>
 
 " disable weird popup
 nmap Q <Nop>
+
+" Make sure the shell is in the right mode to allow CTRL+S / Q
+call system("stty -ixon")
+
+" Auto completion tip window
+autocmd CompleteDone * if pumvisible() == 0|pclose|endif
+highlight Pmenu ctermbg=238 gui=bold
+set splitbelow
+

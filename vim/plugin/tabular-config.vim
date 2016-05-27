@@ -1,6 +1,6 @@
 " c = colon
-map gtc :Tab /:<CR>
-map gtC :Tab /: \+\zs/l1r0<CR>
+map gtc :Tab /\v^[^:]+\zs:/<CR>
+map gtC :Tab /\v^[^:]+: +\zs/l1r0<CR>
 
 " e = equals sign
 map gte :Tab /=<CR>
