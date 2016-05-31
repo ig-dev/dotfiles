@@ -33,7 +33,8 @@ function setauthor() {
 # ----------------------
 # Helpers
 # ----------------------
-alias invoice='python ~/projects/python/gnucash-invoice-printer/printer.py /home/ignatius/Documents/Bytezeit/Accounting/accounts.gnucash '
+alias invoice='python ~/projects/bytezeit/gnucash-invoice-printer/printer.py /home/ignatius/Documents/Bytezeit/Accounting/accounts.gnucash '
+alias offer='python ~/projects/bytezeit/gnucash-invoice-printer/printer.py /home/ignatius/Documents/Bytezeit/quotes.gnucash --template quote.html'
 alias ti='t in'
 alias td='t display -f by_day'
 alias tt='t today -f by_day'

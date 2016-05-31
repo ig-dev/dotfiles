@@ -17,21 +17,24 @@ Plugin 'mattn/emmet-vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tomasr/molokai'
 Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-repeat'
+Plugin 'honza/vim-snippets'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
+Plugin 'SirVer/ultisnips'
 Plugin 'tpope/vim-unimpaired'
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 
+" Languages
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'othree/html5.vim'
+Plugin 'digitaltoad/vim-jade'
+Plugin 'pangloss/vim-javascript'
+Plugin 'elzr/vim-json'
+
 call vundle#end()
 filetype plugin indent on
-
-" Buffer switching
-map <silent> <C-H> :bp<CR>
-map <silent> <C-L> :bn<CR>
-
-" Allow unsaved buffers
-set hidden
 
 " Editor appearance
 let g:rehash256 = 1
@@ -43,13 +46,26 @@ set noshowmode
 set laststatus=0
 highlight Pmenu ctermfg=234 ctermbg=226 gui=bold
 
+" Mouse
+set ttyfast
+set mouse=a
+
+" Allow unsaved buffers
+set hidden
+
 " Search
 set ignorecase
 set smartcase " If there are uppercase letters, become case-sensitive.
 set incsearch " live incremental searching
 set showmatch " live match highlighting
-set nohlsearch "Highlight search patterns, support reloading
+set nohlsearch " Highlight search patterns, support reloading
 set gdefault " use the `g` flag by default.
+
+" Search mappings
+map <Space>s :%s/
+map <Space>S :%S/
+map <Space>r :%s/<C-R><C-W>/
+map <Space>R :%S/<C-R><C-W>/
 
 " Tabs
 set tabstop=4
@@ -62,6 +78,10 @@ set noswapfile
 
 " Auto reload changed files
 set autoread
+
+" Buffer switching
+map <silent> <C-H> :bp<CR>
+map <silent> <C-L> :bn<CR>
 
 " File saving
 noremap <C-S> :w<CR>
@@ -130,3 +150,4 @@ nmap Q <Nop>
 " Auto completion tip window
 autocmd CompleteDone * if pumvisible() == 0|pclose|endif
 set splitbelow
+
