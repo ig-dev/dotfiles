@@ -7,14 +7,16 @@ call vundle#begin()
 
 " Alphabetic by plugin name
 Plugin 'tpope/vim-abolish'
-Plugin 'bling/vim-airline'
 Plugin 'rking/ag.vim'
 Plugin 'bkad/CamelCaseMotion'
 Plugin 'tpope/vim-commentary'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Raimondi/delimitMate'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'mattn/emmet-vim'
+Plugin 'tpope/vim-fugitive'
 Plugin 'tomasr/molokai'
+Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'godlygeek/tabular'
 Plugin 'tpope/vim-unimpaired'
@@ -39,6 +41,7 @@ set number
 syntax on
 set noshowmode
 set laststatus=0
+highlight Pmenu ctermfg=234 ctermbg=226 gui=bold
 
 " Search
 set ignorecase
@@ -124,11 +127,6 @@ nmap <Space><Esc> :nohlsearch<CR>
 " disable weird popup
 nmap Q <Nop>
 
-" Make sure the shell is in the right mode to allow CTRL+S / Q
-call system("stty -ixon")
-
 " Auto completion tip window
 autocmd CompleteDone * if pumvisible() == 0|pclose|endif
-highlight Pmenu ctermbg=238 gui=bold
 set splitbelow
-
