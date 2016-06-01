@@ -9,3 +9,7 @@ map gtE :Tab /=\zs \+/l0<CR>
 " p = pipe
 map gtp :Tab /\|<CR>
 map gtP :Tab /\|\zs<CR>
+
+" q = quote
+map gtq :Tab /"<CR>
+map gtQ :Tab /"\zs<CR>
