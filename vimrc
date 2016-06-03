@@ -1,42 +1,42 @@
 set nocompatible
 filetype off
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Initialize Vim-Plug
+call plug#begin("~/.vim/bundle")
 
 " Alphabetic by plugin name
-Plugin 'tpope/vim-abolish'         " Abolish
-Plugin 'rking/ag.vim'              " Ag
-Plugin 'bkad/CamelCaseMotion'      " CamelCaseMotion
-Plugin 'tpope/vim-commentary'      " Commentary
-Plugin 'ctrlpvim/ctrlp.vim'        " ctrl-p
-Plugin 'Raimondi/delimitMate'      " DelimitMate
-Plugin 'easymotion/vim-easymotion' " EasyMotion
-Plugin 'mattn/emmet-vim'           " Emmet
-Plugin 'tpope/vim-fugitive'        " Fugitive
-Plugin 'Valloric/ListToggle'       " ListToggle
-Plugin 'tomasr/molokai'            " Molokai
-Plugin 'scrooloose/nerdtree'       " Nerdtree
-Plugin 'tpope/vim-repeat'          " Repeat
-Plugin 'honza/vim-snippets'        " Snippets
-Plugin 'tpope/vim-surround'        " Surround
-Plugin 'godlygeek/tabular'         " Tabular
-Plugin 'SirVer/ultisnips'          " UltiSnips
-Plugin 'tpope/vim-unimpaired'      " Unimpaired
-Plugin 'VundleVim/Vundle.vim'      " Vundle
-Plugin 'Valloric/YouCompleteMe'    " YouCompleteMe
+Plug 'tpope/vim-abolish'         " Abolish
+Plug 'rking/ag.vim'              " Ag
+Plug 'bkad/CamelCaseMotion'      " CamelCaseMotion
+Plug 'tpope/vim-commentary'      " Commentary
+Plug 'ctrlpvim/ctrlp.vim'        " ctrl-p
+Plug 'Raimondi/delimitMate'      " DelimitMate
+Plug 'easymotion/vim-easymotion' " EasyMotion
+Plug 'mattn/emmet-vim'           " Emmet
+Plug 'tpope/vim-fugitive'        " Fugitive
+Plug 'airblade/vim-gitgutter'    " GitGutter
+Plug 'Valloric/ListToggle'       " ListToggle
+Plug 'tomasr/molokai'            " Molokai
+Plug 'scrooloose/nerdtree'       " Nerdtree
+Plug 'tpope/vim-repeat'          " Repeat
+Plug 'honza/vim-snippets'        " Snippets
+Plug 'tpope/vim-surround'        " Surround
+Plug 'godlygeek/tabular'         " Tabular
+Plug 'SirVer/ultisnips'          " UltiSnips
+Plug 'tpope/vim-unimpaired'      " Unimpaired
+Plug 'Valloric/YouCompleteMe'    " YouCompleteMe
 
 " Languages
-Plugin 'kchmck/vim-coffee-script'   " CoffeeScript
-Plugin 'othree/html5.vim'           " HTML5
-Plugin 'pangloss/vim-javascript'    " JavaScript
-Plugin 'Glench/Vim-Jinja2-Syntax'   " Jinja2
-Plugin 'elzr/vim-json'              " JSON
-Plugin 'mxw/vim-jsx'                " JSX
-Plugin 'leafgarland/typescript-vim' " Typescript
+Plug 'kchmck/vim-coffee-script'   " CoffeeScript
+Plug 'othree/html5.vim'           " HTML5
+Plug 'pangloss/vim-javascript'    " JavaScript
+Plug 'Glench/Vim-Jinja2-Syntax'   " Jinja2
+Plug 'elzr/vim-json'              " JSON
+Plug 'mxw/vim-jsx'                " JSX
+Plug 'leafgarland/typescript-vim' " Typescript
 
-call vundle#end()
+call plug#end()
+
 filetype plugin indent on
 
 " Editor appearance
