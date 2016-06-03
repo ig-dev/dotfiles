@@ -45,6 +45,7 @@ alias tr='t resume -i'
 alias tid='t display -f ids --start "seven days ago"'
 alias sdown='shutdown '
 alias shutdown='sudo shutdown -h now'
+alias reset='reset; source ~/.bashrc'
 
 # ----------------------
 # Git Aliases
