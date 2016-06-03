@@ -160,7 +160,7 @@ popup_during_fullscreen leave_fullscreen
 
 # Startup script
 exec /home/ignatius/startup.sh
-exec rm /home/ignatius/Documents/access.kdb.lock; keepassx /home/ignatius/Documents/access.kdb -min
+exec rm /home/ignatius/Documents/access.kdbx.lock; keepassx /home/ignatius/Documents/access.kdbx
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/google-chrome-stable'
 
