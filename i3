@@ -151,7 +151,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3blocks
-        mode hide
+        # mode hide
         modifier Mod1
 }
 
@@ -160,7 +160,7 @@ popup_during_fullscreen leave_fullscreen
 
 # Startup script
 exec /home/ignatius/startup.sh
-exec rm /home/ignatius/Documents/access.kdbx.lock; keepassx /home/ignatius/Documents/access.kdbx
+exec keepassx /home/ignatius/Documents/access.kdbx
 exec --no-startup-id /usr/bin/nm-applet
 exec --no-startup-id i3-msg 'workspace 1; exec /usr/bin/google-chrome-stable'
 
@@ -183,6 +183,7 @@ for_window [class="^google-chrome$" window_role="^pop-up$"] border normal
 for_window [class="^(code|Code)$"] border pixel 1
 for_window [title="^(xterm|XTerm)$"] border pixel 2
 for_window [class="^(urxvt|URxvt)$"] border pixel 2
+for_window [title="Loading Tixati..."] floating enable
 
 # application shortcuts
 bindsym $mod+g exec google-chrome
@@ -191,9 +192,15 @@ bindsym $mod+shift+o exec t out
 bindsym $mod+shift+c exec t resume
 
 # background
-exec --no-startup-id feh --bg-fill ~/Pictures/Christian/Jesus-washing-feet.jpg
+exec --no-startup-id feh --bg-fill ~/Pictures/Wallpaper/Jesus-washing-feet.jpg
 
 # autostart
 exec --no-startup-id bash -c "sleep 10; source ~/.profile"
 #bindsym Escape exec xdotool key 66
 # bindcode 66 exec source ~/.profile
+
+
+# Brightness keys
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
