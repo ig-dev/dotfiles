@@ -5,26 +5,27 @@ filetype off
 call plug#begin("~/.vim/bundle")
 
 " Alphabetic by plugin name
-Plug 'tpope/vim-abolish'         " Abolish
-Plug 'rking/ag.vim'              " Ag
-Plug 'bkad/CamelCaseMotion'      " CamelCaseMotion
-Plug 'tpope/vim-commentary'      " Commentary
-Plug 'ctrlpvim/ctrlp.vim'        " ctrl-p
-Plug 'Raimondi/delimitMate'      " DelimitMate
-Plug 'easymotion/vim-easymotion' " EasyMotion
-Plug 'mattn/emmet-vim'           " Emmet
-Plug 'tpope/vim-fugitive'        " Fugitive
-Plug 'airblade/vim-gitgutter'    " GitGutter
-Plug 'Valloric/ListToggle'       " ListToggle
-Plug 'tomasr/molokai'            " Molokai
-Plug 'scrooloose/nerdtree'       " Nerdtree
-Plug 'tpope/vim-repeat'          " Repeat
-Plug 'honza/vim-snippets'        " Snippets
-Plug 'tpope/vim-surround'        " Surround
-Plug 'godlygeek/tabular'         " Tabular
-Plug 'SirVer/ultisnips'          " UltiSnips
-Plug 'tpope/vim-unimpaired'      " Unimpaired
-Plug 'Valloric/YouCompleteMe'    " YouCompleteMe
+Plug 'tpope/vim-abolish'                " Abolish
+Plug 'rking/ag.vim'                     " Ag
+Plug 'bkad/CamelCaseMotion'             " CamelCaseMotion
+Plug 'tpope/vim-commentary'             " Commentary
+Plug 'ctrlpvim/ctrlp.vim'               " ctrl-p
+Plug 'Raimondi/delimitMate'             " DelimitMate
+Plug 'easymotion/vim-easymotion'        " EasyMotion
+Plug 'mattn/emmet-vim'                  " Emmet
+Plug 'tpope/vim-fugitive'               " Fugitive
+Plug 'airblade/vim-gitgutter'           " GitGutter
+Plug 'Valloric/ListToggle'              " ListToggle
+Plug 'mustache/vim-mustache-handlebars' " MustacheHandlebars
+Plug 'tomasr/molokai'                   " Molokai
+Plug 'scrooloose/nerdtree'              " Nerdtree
+Plug 'tpope/vim-repeat'                 " Repeat
+Plug 'honza/vim-snippets'               " Snippets
+Plug 'tpope/vim-surround'               " Surround
+Plug 'godlygeek/tabular'                " Tabular
+Plug 'SirVer/ultisnips'                 " UltiSnips
+Plug 'tpope/vim-unimpaired'             " Unimpaired
+Plug 'Valloric/YouCompleteMe'           " YouCompleteMe
 
 " Languages
 Plug 'kchmck/vim-coffee-script'   " CoffeeScript
