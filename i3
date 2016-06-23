@@ -204,3 +204,6 @@ exec --no-startup-id bash -c "sleep 10; source ~/.profile"
 bindsym XF86MonBrightnessUp exec xbacklight -inc 20
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20
 
+# toggle keyboard layout
+bindsym $mod+shift+t exec (setxkbmap -query | grep -q "layout:\s\+us") && setxkbmap de || setxkbmap us
+
