@@ -50,6 +50,9 @@ set noshowmode
 set laststatus=0
 highlight Pmenu ctermfg=234 ctermbg=226
 
+" Keep cursor at visual distance to top and bottom
+set scrolloff=5
+
 " Mouse
 set ttyfast
 set mouse=a
@@ -80,10 +83,12 @@ set autoread
 " Buffer switching
 map <silent> <C-H> :bp<CR>
 map <silent> <C-L> :bn<CR>
+imap <silent> <C-H> <C-O>:bp<CR>
+imap <silent> <C-L> <C-O>:bn<CR>
 
 " File saving
 noremap <C-S> :w<CR>
-inoremap <C-S> <C-O>:w<CR>
+inoremap <C-S> <ESC>:w<CR>
 
 " File closing
 nnoremap <silent> <C-W> :call CloseBufferOrQuit()<CR>
@@ -140,7 +145,7 @@ nnoremap <Space>h "xxh"xP
 map U ~
 
 " turn off search highlighting
-nmap <Space><Esc> :nohlsearch<CR>
+nmap <Space><Esc> :nohlsearch<CR>:cclose<CR>
 
 " disable weird popup
 nmap Q <Nop>
@@ -149,3 +154,9 @@ nmap Q <Nop>
 autocmd CompleteDone * if pumvisible() == 0|pclose|endif
 set splitbelow
 
+" Fix j/k navigation
+nmap j gj
+nmap k gk
+
+" When yanking / copying in visual mode, do not move cursor
+vmap y ygv<Esc>
